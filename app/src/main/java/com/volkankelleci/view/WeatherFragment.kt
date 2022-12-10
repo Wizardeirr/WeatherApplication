@@ -20,4 +20,5 @@ class WeatherFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_weather, container, false)
     }
 
+
 }
