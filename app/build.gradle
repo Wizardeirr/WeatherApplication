@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
 }
 
 android {
@@ -36,6 +38,12 @@ android {
 
 dependencies {
     def nav_version = "2.5.3"
+    def retrofitVersion = '2.8.1'
+    def glideVersion = '4.14.2'
+    def roomVersion = '2.4.3'
+    def lifeCycleExtensionVersion = '1.1.1'
+    def rxJavaVersion = '2.2.6'
+    def rxAndroidVersion = '2.1.1'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -45,6 +53,26 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
+    //NAV
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    //GLIDE
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    //ROOM
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    // LIFE CYCLE
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
+
+    //RX JAVA FOR COROUTINES
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 }
