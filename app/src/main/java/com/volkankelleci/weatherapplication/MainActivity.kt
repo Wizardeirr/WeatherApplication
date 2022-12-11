@@ -1,6 +1,7 @@
 package com.volkankelleci.weatherapplication
 
 import android.content.SharedPreferences
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,14 @@ class MainActivity : AppCompatActivity() {
         viewModel.refreshData()
         var countryName=GET.getString("cityName","")
         city_edit_text.setText(countryName)
+        swipeRefreshLayout.setOnRefreshListener {
+            progress_Bar.visibility=View.VISIBLE
+            error_text.visibility=View.GONE
+            linearLayout2.visibility=View.GONE
+            viewModel.refreshData()
+            swipeRefreshLayout.isRefreshing=false
+
+        }
         getDataFromInternet()
 
 
@@ -35,15 +44,14 @@ class MainActivity : AppCompatActivity() {
         viewModel.weatherData.observe(this, Observer {
             it?.let {
                 linearLayout2.visibility=View.VISIBLE
-                hot_view.text =it.current.temperature.toString()
+                hot_view.text ="${it.current.temperature.toString()}°C"
                 city_name_text.text = it.location.name
                 country_code.text = it.location.country
-                humidity.text = it.current.humidity.toString()
-                winspeed.text = it.current.windSpeed.toString()
-                precip.text = it.current.precip.toString()
+                humidity.text = "Nem % ${it.current.humidity.toString()}"
+                winspeed.text = "Rüzgar Hızı ${it.current.windSpeed.toString()}km/s"
+                precip.text = "Yağmur % ${it.current.precip.toString()}"
+                observation_time.text="Tarih ${it.location.localtime}"
 
-                Picasso.get().load("https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png")
-                    .into(cloud_image_on_temp);
 
             }
         })
