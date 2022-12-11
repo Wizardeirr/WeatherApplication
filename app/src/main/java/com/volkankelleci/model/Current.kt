@@ -22,7 +22,7 @@ data class Current(
     @SerializedName("weather_descriptions")
     val weatherDescriptions: List<String>,
     @SerializedName("weather_icons")
-    val weatherİcons: List<String>,
+    val weatherIcons: List<String>,
     @SerializedName("wind_degree")
     val windDegree: Int,
     @SerializedName("wind_dir")

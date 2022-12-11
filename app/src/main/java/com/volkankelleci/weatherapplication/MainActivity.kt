@@ -6,11 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.bumptech.glide.Glide
-import com.volkankelleci.model.Weather
+import com.squareup.picasso.Picasso
 import com.volkankelleci.viewmodel.WeatherFragmentViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.concurrent.ThreadLocalRandom.current
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: WeatherFragmentViewModel
@@ -44,9 +42,9 @@ class MainActivity : AppCompatActivity() {
                 winspeed.text = it.current.windSpeed.toString()
                 precip.text = it.current.precip.toString()
 
-                Glide.with(this)
-                    .load("https://assets.weatherstack.com/images/wsymbols01_png_64/" + it.current.weatherİcons.get(0) + "wsymbol_0001_sunny.png")
-                    .into(cloud_image_on_temp)
+                Picasso.get().load("https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png")
+                    .into(cloud_image_on_temp);
+
             }
         })
         viewModel.errorMessage.observe(this, Observer {
