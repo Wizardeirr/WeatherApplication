@@ -21,15 +21,15 @@ class WeatherFragmentViewModel:ViewModel() {
     val errorMessage=MutableLiveData<Boolean>()
     val progressBar=MutableLiveData<Boolean>()
 
-    fun refreshData(){
-        getDataFromAPI()
+    fun refreshData(name:String){
+        getDataFromAPI(name)
 
     }
-    private fun getDataFromAPI(){
+    private fun getDataFromAPI(name:String){
         progressBar.value=true
         disposable.add(
             weatherAPIService
-                .getDataService()
+                .getDataService(name)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object :DisposableSingleObserver<Weather>(){

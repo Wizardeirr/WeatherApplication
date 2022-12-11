@@ -16,9 +16,6 @@
     android:background="@drawable/back_ground"
     android:orientation="vertical">
 
-
-
-
     <TextView
         android:id="@+id/error_text"
         android:layout_width="0dp"
@@ -72,7 +69,6 @@
             android:layout_margin="5dp"
             android:hint="Please Enter Cities"
 
-
             >
 
         </EditText>
@@ -108,7 +104,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-            android:src="@drawable/cloud_icon">
+            android:src="@drawable/ic_baseline_wb_sunny_24">
 
         </ImageView>
 
@@ -131,17 +127,20 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:id="@+id/country_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Country Code"
+                    android:textStyle="bold"
                     android:textSize="25dp">
 
                 </TextView>
@@ -151,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="City Name"
+                    android:textStyle="bold"
                     android:textSize="25dp">
 
                 </TextView>
@@ -192,20 +192,24 @@
 
 
             </LinearLayout>
-
-
             <ImageView
-                android:id="@+id/cloud_image"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="10"
-                android:src="@drawable/cloud_icon">
+                android:src="@drawable/cloud_icon"
+                android:padding="35dp"
+                android:layout_gravity="end">
 
             </ImageView>
+
+
+
+
         </LinearLayout>
 
 
+
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
