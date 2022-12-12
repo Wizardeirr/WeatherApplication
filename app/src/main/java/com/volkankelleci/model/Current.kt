@@ -11,7 +11,7 @@ data class Current(
     val isDay: String,
     @SerializedName("observation_time")
     val observationTime: String,
-    val precip: Double,
+    val precip: Int,
     val pressure: Int,
     val temperature: Int,
     @SerializedName("uv_index")
