@@ -11,7 +11,7 @@ data class Current(
     val isDay: String,
     @SerializedName("observation_time")
     val observationTime: String,
-    val precip: Int,
+    val precip: Double,
     val pressure: Int,
     val temperature: Int,
     @SerializedName("uv_index")
@@ -22,7 +22,7 @@ data class Current(
     @SerializedName("weather_descriptions")
     val weatherDescriptions: List<String>,
     @SerializedName("weather_icons")
-    val weatherIcons: List<String>,
+    val weatherİcons: List<String>,
     @SerializedName("wind_degree")
     val windDegree: Int,
     @SerializedName("wind_dir")
