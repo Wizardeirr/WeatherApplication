@@ -1,6 +1,5 @@
-package com.volkankelleci.weatherapplication
+package com.volkankelleci.view
 
-import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
@@ -8,23 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.volkankelleci.viewmodel.WeatherFragmentViewModel
+import com.volkankelleci.weatherapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity() : AppCompatActivity() {
     private lateinit var viewModel: WeatherFragmentViewModel
-    private lateinit var GET:SharedPreferences
-    private lateinit var SET:SharedPreferences.Editor
+    private lateinit var GET: SharedPreferences
+    private lateinit var SET: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        GET=getSharedPreferences(packageName, MODE_PRIVATE)
-        SET=GET.edit()
-
         viewModel = ViewModelProviders.of(this).get(WeatherFragmentViewModel::class.java)
 
-        var countryName=GET.getString("cityName","Malatya")
+        GET = getSharedPreferences(packageName, AppCompatActivity.MODE_PRIVATE)
+        SET = GET.edit()
+
+        var countryName = GET.getString("cityName", "Malatya")
         city_edit_text.setText(countryName)
         viewModel.refreshData(countryName!!)
 
@@ -32,26 +33,24 @@ class MainActivity() : AppCompatActivity() {
 
 
         swipeRefreshLayout.setOnRefreshListener {
-            progress_Bar.visibility=View.GONE
-            error_text.visibility=View.GONE
-            linearLayout2.visibility=View.GONE
+            progress_Bar.visibility = View.GONE
+            error_text.visibility = View.GONE
+            linearLayout2.visibility = View.GONE
 
-            var cityName=GET.getString("cityName",countryName)
+            var cityName = GET.getString("cityName", countryName)
             city_edit_text.setText(cityName)
             viewModel.refreshData(cityName!!)
-            swipeRefreshLayout.isRefreshing=false
+            swipeRefreshLayout.isRefreshing = false
 
         }
-        search_button.setOnClickListener{
-            val cityName=city_edit_text.text.toString()
-            SET.putString("cityName",cityName)
+        search_button.setOnClickListener {
+            val cityName = city_edit_text.text.toString()
+            SET.putString("cityName", cityName)
             SET.apply()
             viewModel.refreshData(cityName)
             getDataFromInternet()
         }
-
     }
-
 
     fun getDataFromInternet() {
 
@@ -67,7 +66,7 @@ class MainActivity() : AppCompatActivity() {
                 observation_time.text = "Güncellenme Zamanı ${it.current.observationTime}"
             }
         })
-        viewModel.errorMessage.observe(this, Observer {
+        viewModel.errorMessage.observe(this , Observer {
             if (it) {
                 linearLayout2.visibility = View.GONE
                 error_text.visibility = View.VISIBLE
@@ -78,7 +77,7 @@ class MainActivity() : AppCompatActivity() {
 
             }
         })
-        viewModel.progressBar.observe(this, Observer {
+        viewModel.progressBar.observe(this  , Observer {
             if (it) {
                 linearLayout2.visibility = View.GONE
                 error_text.visibility = View.GONE
@@ -90,5 +89,7 @@ class MainActivity() : AppCompatActivity() {
             }
         })
 
+
     }
-}
+
+    }

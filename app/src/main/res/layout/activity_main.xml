@@ -1,206 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
 
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeRefreshLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_constraintStart_toStartOf="@+id/error_text"
     app:layout_constraintTop_toTopOf="parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/A"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/back_ground"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/error_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="304dp"
-        android:layout_weight="3"
-        android:padding="10dp"
-        android:text="ERROR ! TRY AGAIN"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progress_Bar">
-
-    </TextView>
-
-    <ProgressBar
-        android:id="@+id/progress_Bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ProgressBar>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="258dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/city_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="10"
-            android:layout_margin="5dp"
-            android:hint="Please Enter Cities"
-
-            >
-
-        </EditText>
-
-        <ImageView
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/search_icon"
-
-            >
-
-
-        </ImageView>
-
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/cloud_image_on_temp"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:src="@drawable/ic_baseline_wb_sunny_24">
-
-        </ImageView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/A"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_ground"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/hot_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="46dp"
-            android:layout_marginBottom="220dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="15 C"
-            android:textSize="70dp">
+            android:id="@+id/error_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="304dp"
+            android:layout_weight="3"
+            android:padding="10dp"
+            android:text="ERROR ! TRY AGAIN"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/progress_Bar">
 
         </TextView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progress_Bar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ProgressBar>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="258dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/city_edit_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:layout_margin="5dp"
+                android:hint="Please Enter Cities"
+
                 >
 
-                <TextView
-                    android:id="@+id/country_code"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Country Code"
-                    android:textStyle="bold"
-                    android:textSize="25dp">
+            </EditText>
 
-                </TextView>
-
-                <TextView
-                    android:id="@+id/city_name_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City Name"
-                    android:textStyle="bold"
-                    android:textSize="25dp">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/humidity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="humidity"
-                    android:textSize="20sp">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/winspeed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="windSpeed"
-                    android:textSize="20sp">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/precip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="precip"
-                    android:textSize="20sp">
-
-                </TextView>
-                <TextView
-                    android:id="@+id/observation_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Observation Time"
-                    android:textSize="20sp">
-
-                </TextView>
-
-
-            </LinearLayout>
             <ImageView
-                android:layout_width="match_parent"
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/cloud_icon"
-                android:padding="35dp"
-                android:layout_gravity="end">
+                android:layout_weight="1"
+                android:src="@drawable/search_icon"
+
+                >
+
 
             </ImageView>
 
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/cloud_image_on_temp"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_baseline_wb_sunny_24">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/hot_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="46dp"
+                android:layout_marginBottom="220dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="15 C"
+                android:textSize="70dp">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/country_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country Code"
+                        android:textStyle="bold"
+                        android:textSize="25dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/city_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City Name"
+                        android:textStyle="bold"
+                        android:textSize="25dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="humidity"
+                        android:textSize="20sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/winspeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="windSpeed"
+                        android:textSize="20sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/precip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="precip"
+                        android:textSize="20sp">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/observation_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Observation Time"
+                        android:textSize="20sp">
+
+                    </TextView>
+
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cloud_icon"
+                    android:padding="35dp"
+                    android:layout_gravity="end">
+
+                </ImageView>
+
+
+
+
+            </LinearLayout>
 
 
 
@@ -208,9 +211,8 @@
 
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
