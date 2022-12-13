@@ -1,5 +1,6 @@
 package com.volkankelleci.view
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
@@ -17,9 +18,10 @@ class MainActivity() : AppCompatActivity() {
     private lateinit var SET: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         viewModel = ViewModelProviders.of(this).get(WeatherFragmentViewModel::class.java)
 
         GET = getSharedPreferences(packageName, AppCompatActivity.MODE_PRIVATE)
@@ -50,6 +52,9 @@ class MainActivity() : AppCompatActivity() {
             viewModel.refreshData(cityName)
             getDataFromInternet()
         }
+
+
+
     }
 
     fun getDataFromInternet() {
@@ -91,5 +96,8 @@ class MainActivity() : AppCompatActivity() {
 
 
     }
+
+
+
 
     }
