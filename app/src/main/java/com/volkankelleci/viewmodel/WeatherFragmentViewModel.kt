@@ -9,44 +9,43 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class WeatherFragmentViewModel : ViewModel() {
+class WeatherFragmentViewModel:ViewModel() {
 
     private val weatherAPIService = WeatherAPIService()
     private val disposable = CompositeDisposable()
 
     val weatherData = MutableLiveData<WeatherAppModel>()
-    val errorMessage = MutableLiveData<Boolean>()
-    val progressBar = MutableLiveData<Boolean>()
+    val errorMessage=MutableLiveData<Boolean>()
+    val progressBar=MutableLiveData<Boolean>()
 
-    fun refreshData(cityName: String) {
-        getDataFromAPI(cityName)
+
+
+    fun refreshData(cityName: String){
+        takesToDataFromInternet(cityName)
 
     }
 
-    private fun getDataFromAPI(cityName:String) {
-        progressBar.value = true
+
+
+    private fun takesToDataFromInternet(cityName:String){
+    progressBar.value=true
         disposable.add(
-            weatherAPIService
-                .getDataService(cityName)
+            weatherAPIService.getDataService(cityName)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<WeatherAppModel>() {
                     override fun onSuccess(t: WeatherAppModel) {
-                        weatherData.value = t
-                        errorMessage.value = false
-                        progressBar.value = false
+                        weatherData.value=t
+                        errorMessage.value=false
+                        progressBar.value=false
                     }
-
                     override fun onError(e: Throwable) {
-                        errorMessage.value = true
-                        progressBar.value = false
+                        errorMessage.value=true
+                        progressBar.value=false
                         e.printStackTrace()
                     }
                 })
         )
-
+    }
     }
 
-
-
-}
