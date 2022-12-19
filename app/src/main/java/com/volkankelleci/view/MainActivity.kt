@@ -1,6 +1,5 @@
 package com.volkankelleci.view
 
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
@@ -22,12 +21,13 @@ class MainActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        viewModel = ViewModelProviders.of(this).get(WeatherFragmentViewModel::class.java)
 
-        GET = getSharedPreferences(packageName, AppCompatActivity.MODE_PRIVATE)
+        GET = getSharedPreferences(packageName, MODE_PRIVATE)
         SET = GET.edit()
 
-        var countryName = GET.getString("cityName", "Malatya")
+        viewModel = ViewModelProviders.of(this).get(WeatherFragmentViewModel::class.java)
+        var countryName = GET.getString("cityName", "malatya")
+
         city_edit_text.setText(countryName)
         viewModel.refreshData(countryName!!)
 
@@ -52,6 +52,7 @@ class MainActivity() : AppCompatActivity() {
             viewModel.refreshData(cityName)
             getDataFromInternet()
         }
+
 
 
 
@@ -100,4 +101,5 @@ class MainActivity() : AppCompatActivity() {
 
 
 
-    }
+
+}
