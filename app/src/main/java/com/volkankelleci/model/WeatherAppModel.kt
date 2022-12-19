@@ -3,7 +3,7 @@ package com.volkankelleci.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "weathertable")
 data class WeatherAppModel(
     val current: Current,
     val location: Location,
